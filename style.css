@@ -29,8 +29,8 @@ body{
 .life
 {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 5%;
+    left: 2%;
     color: gray;
     font-size: 40px;
 }
@@ -48,7 +48,7 @@ body{
     text-shadow: 0px 0px 10px black;
     font-size: 40px;
     color: white;
-    width: 180px;
+    width: 13%;
 }
 .shoot-btn
 {
@@ -79,7 +79,7 @@ body{
     border-radius: 50px;
     font-size: 25px;
     animation: scorePopUp 1s;
-    width: 60px;
+    width: 5%;
 }
 @keyframes scorePopUp
 {
@@ -100,9 +100,9 @@ body{
     left: 50px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     font-size: 18px;
-    width: 150px;
-    height: 150px;
-    border-radius: 100px;
+    width: 10%;
+    height: 20%;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,7 +131,7 @@ body{
 .infoPanel
 {
     opacity: 0.9;
-    width: 30px;
+    width: 2%;
     padding: 10px;
     border-radius: 30px;
     transform: translate( 190px, -70px);
@@ -198,8 +198,8 @@ body{
     background-color: #171717;
     border-radius: 7px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-    height: 600px;
-    width: 1000px;
+    height: 82%;
+    width: 66%;
     position: absolute;
     left: 50%;
     bottom: 20px;
@@ -212,15 +212,14 @@ body{
 {
     position: absolute;
     z-index: 2;
-    left: 250px;
-    width: 100px;
+    width: 10%;
 }
 
 .container .archery
 {
     transition: ease-in-out all 1s;
     position: absolute;
-    width: 200px;
+    width: 20%;
 }
 .gameOver
 {
