@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="icon" href="./assets/img/archery.png">
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://kit.fontawesome.com/029682b453.js" crossorigin="anonymous"></script>
+    <title>Shooter</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1 class="title">Shooter</h1>
+        <div class="life">
+            <i class="fas fa-heart" :class="{alive: lives > 0}"></i>
+            <i class="fas fa-heart" :class="{alive: lives > 1}"></i>
+            <i class="fas fa-heart" :class="{alive: lives > 2}"></i>
+            <i class="fas fa-heart" :class="{alive: lives > 3}"></i>
+        </div>
+        <div class="score">
+            Score: {{ score }}
+        </div>
+        <div class="score" style="top: 90px;">
+            Stage: {{ stage }}
+        </div>
+        <div class="shoot-btn" :class="{scorePopUp: addPoint}">+{{ points }}</div>
+        <button @click="start" class="shoot-btn start" >Start</button>
+        <div class="timer">{{ time}}</div>
+        <div class="container">
+            <img src="./assets/img/archery.png" alt=""
+                class="archery"
+                :style="[{left: archery[0] + 'px'}, {top: archery[1] + 'px'}]">
+
+            <img src="./assets/img/crosshair.png" alt=""
+                class="crosshair"
+                ref="crosshair"
+                :style="[{left: crosshair[0] + 'px'}, {top: crosshair[1] + 'px'}]">
+
+            <img src="./assets/img/gunshoot.png" alt=""
+                class="crosshair" style="width: 50px; height: 50px;"
+                :style="[{left: crosshair[0] + 25 + 'px'}, {top: crosshair[1] + 25 + 'px'}, {opacity: shootImg}]">
+        </div>
+        <div class="infoPanel" :class="[{source: !infoPanel}, {container: infoPanel}]">
+            <i class="fa " :class="[{'fa-question-circle': !infoPanel}, {'fa-times': infoPanel}]"  @click="infoPanel = !infoPanel"></i>
+            <div class="info" :class="{invisible: !infoPanel}">
+                <div class="howTo" :class="{invisible: !infoPanel}">
+                    <h1>How To Play</h1>
+                    <ul>
+                        <li>Click <span>"start"</span> to start the game </li>
+                        <li>For moving crosshair Move <span>"Mouse"</span>.</li>
+                        <li>When your crosshair at the the target Left Click To <span>"shoot"</span> Or Click On Space</li>
+                        <li>Click <span>"Escape"</span> to Stop the game And Click <span>"Enter"</span> Or <span>"Start"</span> To Continue. </li>
+                        <br/>
+                        <h1>Info:</h1>
+                        <li>Created By: <span>"Salman El-Zaydy"</span>Gmail : salmanelzaydy@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="gameOver container" :class="{invisible: !gameOver}">
+
+            <h1>Game Over</h1>
+            <p>Score: {{ score }}</p>
+            <p>Top <button style="padding:10px 18px;border-radius:3px;background-color: aqua;font-weight:bold" @click="restart">Restart</button> to restart game</p>
+        </div>
+
+        <p style="display: none;">{{ activity }}</p>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
